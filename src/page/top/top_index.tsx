@@ -1,7 +1,4 @@
 import React from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {rootState} from './../../store/index';
-import {NoNameAction1,NoNameAction2} from './../../store/pageTop/actions'
 import TopNews from './top_news';
 import TopConcept from './top_concept';
 import TopMenu from './top_menu';

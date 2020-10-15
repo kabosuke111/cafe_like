@@ -34,6 +34,7 @@ const upperCase = (text: string): string => {
 
   return (
     <section className="l-section top-concept">
+      <h2 className="title-section">Concept</h2>
       <ul className="concept-ul">
         {conseptList.map((key) => (
             <li className="concept-list">
@@ -42,7 +43,10 @@ const upperCase = (text: string): string => {
             </li>
         ))}
       </ul>
-      <p></p>
+      <p>目指したのは心の休まる安らぎの空間。<br />
+      なんかまた来たいな、と思わせるような癒しのカフェを目指しました。<br />
+      わいわいがやがやもいいけれど、<br />
+      一人で静かに過ごすのも大切ですよね。</p>
     </section>
   );
 }

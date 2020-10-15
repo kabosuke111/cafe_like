@@ -1,19 +1,30 @@
-import {ActionTypes} from '../actionTypes';
+import {AT_SectionTitle} from '../actionTypes';
 import {Action} from 'redux';
 
 //stateの型
-export type nonamestate = {
-    nonamestate1: string;
-    nonamestate2: string;
+export type section_title_state = {
+    show_title: string
 }
 
 //actionの型
-interface NoNameAction1 extends Action {
-    type: typeof ActionTypes.noname1;
+interface topTitle extends Action {
+    type: typeof AT_SectionTitle.top_title
 }
 
-interface NoNameAction2 extends Action {
-    type: typeof ActionTypes.noname2;
+interface SectionNews extends Action {
+    type: typeof AT_SectionTitle.section_news
 }
 
-export type NoNameActions = NoNameAction1 | NoNameAction2;
+interface SectionConcept extends Action {
+    type: typeof AT_SectionTitle.section_concept
+}
+
+interface SectionMenu extends Action {
+    type: typeof AT_SectionTitle.section_menu
+}
+
+interface SectionAccess extends Action {
+    type: typeof AT_SectionTitle.section_access
+}
+
+export type SectionTitleActions = topTitle | SectionNews | SectionConcept | SectionMenu | SectionAccess;

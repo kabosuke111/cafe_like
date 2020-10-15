@@ -1,5 +1,4 @@
-import React, {useCallback} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import React from 'react';
 import title_news from '../../images/top/svg/title_news.svg';
 
 const TopNews = () => {
@@ -23,6 +22,16 @@ const TopNews = () => {
       times: `2020-09-30`,
       times_text: `2020/09/30(Fri)`,
       news_text: `ブロッコリーのカロリーを考えます。`,
+    },
+    {
+      times: `2020-10-12`,
+      times_text: `2020/10/12(Fri)`,
+      news_text: `ハトホルの神殿にゴミを入れます`,
+    },
+    {
+      times: `2020-12-06`,
+      times_text: `2020/12/06(Sun)`,
+      news_text: `ホンダらポーいのホゲホゲポー`,
     }
   ]
 
@@ -31,7 +40,7 @@ const TopNews = () => {
       <div>
         <img src={title_news} alt="News" />
       </div>
-      <h3 className="title-section">News</h3>
+      <h2 className="title-section">News</h2>
       {news_item.map((key)=>(
         <article>
           <p><time dateTime={key.times}>{key.times_text}</time></p>

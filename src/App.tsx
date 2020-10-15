@@ -1,13 +1,12 @@
-import React, {useCallback} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {rootState} from './store/index';
-import {NoNameAction1,NoNameAction2} from './store/pageTop/actions';
+import React from 'react';
 import TopIndex from './page/top/top_index'
+import Header from './page/header'
 
 function App() {
 
   return (
     <div id="l-wrapper">
+      <Header />
       <TopIndex />
     </div>
   );
