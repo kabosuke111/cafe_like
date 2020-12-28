@@ -1,0 +1,223 @@
+/*css
+@BASE、MODULEの一部機能は全てに使い回しができる
+@SMACSS、BEM
+*/
+@charset "UTF-8";
+@font-face {
+	font-family: "Avenir";
+	src: url(./../fonts/Avenir.woff);
+}
+@font-face {
+	font-family: "JSO";
+	src: url(../fonts/JuliusSansOne-Regular.woff);
+}
+
+/*================================================
+
+					THEME
+
+================================================*/
+$mainColor:  #eaeaea;
+$mainFontColor: #707070;
+$subColor: #dbbe1d;
+$mainFontSize: 1.4rem;
+$biggerFontSize: 1.8rem;
+$bigFontSize: 3.0rem;
+
+$fontFamilyTypos: kan48typos-std, sans-serif;
+$fontFamilyAvenir: "Avenir", sans-serif;
+$fontFamilyJSO: "JSO", sans-serif;
+
+//media query
+$mediaPC: 1024px;
+$mediaPhone: 768px;
+$mediaSmallPhone: 375px;
+
+.t_back_main_color {background: $mainColor;}
+.t_font_main_color {color: $mainFontColor;}
+.t_back_sub_color {background: $subColor;}
+
+/*================================================
+
+					BASE
+
+================================================*/
+@mixin FLEX($j_c: flex_start, $i: center, $w: wrap){
+	display: flex;
+	@if $j_c != null {justify-content: $j_c;}
+	@if $i != null {align-items: $i;}
+	@if $w != null {flex-wrap: $w;}
+}
+
+@mixin MWMD($mw: null, $w: 100%, $margin: 0 auto, $d: block){
+	@if $mw != null {max-width: $mw;}
+	@if $w == nochange {width: 100%;} @else if $w != null  {width: $w;}
+	@if $margin == nochange {margin: 0 auto} @else if $margin != null  {margin: $margin;}
+	@if $d != null {display: $d;}
+}
+
+@mixin POS($p,$t,$r,$b,$l,$z){
+	position: $p;
+	@if $t != null {top: $t;}
+	@if $r != null {right: $r;}
+	@if $b != null {bottom: $b;}
+	@if $l != null {left: $l;}
+	@if $z != null {z-index: $z;}
+}
+
+*,*::before,*::after {margin: 0;padding: 0;box-sizing: border-box;}
+html {font-size:62.5%;}
+body {font-size:1.4rem;font-family: $fontFamilyJSO, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;color: $mainFontColor;}
+li {list-style:none;}
+a{text-decoration:none;color:inherit}
+form,input,button{-webkit-appearance: none;border:none;background:none;box-shadow:none;border-radius:0;outline:none}
+address {font-style:normal;}
+img{width:100%;}
+
+/*================================================
+
+					LAYOUT
+
+================================================*/
+
+
+/*================================================
+
+					MODULE
+
+================================================*/
+
+// **************** 使い回しのできるパーツ ****************
+.m_font_JSO {font-family: $fontFamilyJSO;}
+.m_font_Ave {font-family: $fontFamilyAvenir;}
+.m_font_Typ {font-family: $fontFamilyTypos;}
+
+//font-sizeの基本は次の五つをとりあえず使う。
+.m_font_little {font-size: 1.0rem;}
+.m_font_small {font-size: 1.2rem;}
+.m_font_medium {font-size: $mainFontSize;}
+.m_font_large {font-size: $biggerFontSize;}
+.m_font_largest {font-size: $bigFontSize;}
+
+//uはutility 基本として用意したものではカバーしきれない時にのみ使う。
+.u_font_20 {font-size: 2.0rem;}
+.u_font_41 {font-size: 4.1rem;}
+
+.m_bold {font-weight: bold;}
+.m_normal {font-weight: normal;}
+
+.m_t_center {text_align: center;}
+
+.m_t_indent_1 {text-indent: -1em;padding-left: 1em;}
+
+.m_l_h_1 {line-height: 1;}.m_l_h_12 {line-height: 1.2;}.m_l_h_15 {line-height: 1.5;}.m_l_h_17 {line-height: 1.7;}.m_l_h_2 {line-height: 2;}
+
+.m_mg_center {margin-left: auto;margin-right: auto;}
+
+.m_w_100 {width:100%;}
+
+.m_d_block {display: block;}
+.m_d_inline {display: inline;}
+.m_d_i_b {display: inline-block;}
+.m_d_flex {display: flex;flex-wrap: wrap;align-items: center;}
+.m_d_flex_nowrap {display: flex;flex-wrap: nowrap;align-items: center;}
+
+.m_d_i_b_center {display: inline-block;vertical-align: middle;}
+.m_f_shrink_1 {flex-shrink: 1;}
+.m_f_center {justify-content: center;}
+.m_f_around {justify-content: space-around;}
+.m_f_between {justify-content: space-between;}
+.m_f_start {justify-content: flex-start;}
+.m_f_col {flex-direction: column}
+
+.m_absolute {position: absolute;}
+.m_relative {position: relative;}
+.m_fixed {position: fixed;}
+.m_z_1 {z-index: 1;}.m_z_2 {z-index: 2;}.m_z_3 {z-index: 3;}.m_z_4 {z-index: 4;}.m_z_5 {z-index: 5;}.m_z_10 {z-index: 5;}
+
+.m_center {left: 50%;transform: translateX(-50%);}
+.m_middle {top: 50%;transform: translateY(-50%);}
+.m_circle {border-radius: 50%;}
+
+
+/* *************** 一塊のモジュール **************** */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			header
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.site__title {
+	font: {
+		weight: 300;
+		size: 7.4rem;/*対応していないブラウザ用*/
+		size: min(7.4rem,7vw);
+		family: $fontFamilyJSO;
+	}
+	white-space: nowrap;
+	margin-right: 20px;
+}
+
+.header__up {
+	border-bottom: solid 1px #707070;
+	padding: 15px 0 10px;
+}
+
+.address__tel {
+	font: {
+		size: $biggerFontSize;/*対応していないブラウザ用*/
+		size: min(3.0rem, 3vw);
+	}
+	margin-bottom: 5px;
+}
+
+.global-menu {
+	&__ul {
+		margin-bottom: 20px;
+	}
+
+	&__item {
+		margin: 12px 4% 7px;
+	}
+
+	&__link {
+		padding: 3px 5px;
+		transition: 0.5s;
+	}
+	
+	@media screen and (min-width: 769px) {
+		&__link::after {
+			content: "";
+			display: block;
+			width: 0%;
+			@include POS(absolute, 50%, 0, null, null, -1);
+			height: 1.5em;
+			background: $mainFontColor;
+			transition: 0.2s ease-out;
+		    transform: translateY(-50%);
+		}
+
+		&__link:hover{
+			color: #fff;
+			
+			&::after {
+				@include POS(null, null, none, null, 0, null);
+				width: 100%;
+			}
+		}
+	}
+
+	
+
+}
+
+.header__image {
+	@include MWMD(834px, nochange, nochange);
+}
+
+
+
+
+/*================================================
+
+					STATE
+
+================================================*/

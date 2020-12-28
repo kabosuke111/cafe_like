@@ -1,4 +1,4 @@
-import {AT_SectionTitle} from '../actionTypes';
+import {AT_SectionTitle} from '../../actionTypes';
 import {section_title_state, SectionTitleActions} from './types';
 
 //reducer

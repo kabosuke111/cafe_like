@@ -33,13 +33,13 @@ const upperCase = (text: string): string => {
 }
 
   return (
-    <section className="l-section top-concept">
-      <h2 className="title-section">Concept</h2>
-      <ul className="concept-ul">
+    <section>
+      <h2>Concept</h2>
+      <ul>
         {conseptList.map((key) => (
-            <li className="concept-list">
-              <img className={`concept-image ${key.title}`} src={key.image} alt={key.title} />
-              <p className="concept-title">{`${upperCase(key.title)}`}</p>
+            <li>
+              <img className={`concept_image ${key.title}`} src={key.image} alt={key.title} />
+              <p className="concept_title">{`${upperCase(key.title)}`}</p>
             </li>
         ))}
       </ul>

@@ -1,4 +1,4 @@
-import {AT_SectionTitle} from '../actionTypes';
+import {AT_SectionTitle} from '../../actionTypes';
 import {SectionTitleActions} from './types';
 
 //action creator

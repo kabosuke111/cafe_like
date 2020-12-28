@@ -1,13 +1,279 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@charset "UTF-8";
+/*css
+@BASE、MODULEの一部機能は全てに使い回しができる
+@SMACSS、BEM
+*/
+@font-face {
+  font-family: "Avenir";
+  src: url(./../fonts/Avenir.woff); }
+@font-face {
+  font-family: "JSO";
+  src: url(../fonts/JuliusSansOne-Regular.woff); }
+/*================================================
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+					THEME
+
+================================================*/
+.t_back_main_color {
+  background: #eaeaea; }
+
+.t_font_main_color {
+  color: #707070; }
+
+.t_back_sub_color {
+  background: #dbbe1d; }
+
+/*================================================
+
+					BASE
+
+================================================*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.4rem;
+  font-family: "JSO", sans-serif, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  color: #707070; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+form, input, button {
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  outline: none; }
+
+address {
+  font-style: normal; }
+
+img {
+  width: 100%; }
+
+/*================================================
+
+					LAYOUT
+
+================================================*/
+/*================================================
+
+					MODULE
+
+================================================*/
+.m_font_JSO {
+  font-family: "JSO", sans-serif; }
+
+.m_font_Ave {
+  font-family: "Avenir", sans-serif; }
+
+.m_font_Typ {
+  font-family: kan48typos-std, sans-serif; }
+
+.m_font_little {
+  font-size: 1.0rem; }
+
+.m_font_small {
+  font-size: 1.2rem; }
+
+.m_font_medium {
+  font-size: 1.4rem; }
+
+.m_font_large {
+  font-size: 1.8rem; }
+
+.m_font_largest {
+  font-size: 3rem; }
+
+.u_font_20 {
+  font-size: 2.0rem; }
+
+.u_font_41 {
+  font-size: 4.1rem; }
+
+.m_bold {
+  font-weight: bold; }
+
+.m_normal {
+  font-weight: normal; }
+
+.m_t_center {
+  text_align: center; }
+
+.m_t_indent_1 {
+  text-indent: -1em;
+  padding-left: 1em; }
+
+.m_l_h_1 {
+  line-height: 1; }
+
+.m_l_h_12 {
+  line-height: 1.2; }
+
+.m_l_h_15 {
+  line-height: 1.5; }
+
+.m_l_h_17 {
+  line-height: 1.7; }
+
+.m_l_h_2 {
+  line-height: 2; }
+
+.m_mg_center {
+  margin-left: auto;
+  margin-right: auto; }
+
+.m_w_100 {
+  width: 100%; }
+
+.m_d_block {
+  display: block; }
+
+.m_d_inline {
+  display: inline; }
+
+.m_d_i_b {
+  display: inline-block; }
+
+.m_d_flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; }
+
+.m_d_flex_nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center; }
+
+.m_d_i_b_center {
+  display: inline-block;
+  vertical-align: middle; }
+
+.m_f_shrink_1 {
+  flex-shrink: 1; }
+
+.m_f_center {
+  justify-content: center; }
+
+.m_f_around {
+  justify-content: space-around; }
+
+.m_f_between {
+  justify-content: space-between; }
+
+.m_f_start {
+  justify-content: flex-start; }
+
+.m_f_col {
+  flex-direction: column; }
+
+.m_absolute {
+  position: absolute; }
+
+.m_relative {
+  position: relative; }
+
+.m_fixed {
+  position: fixed; }
+
+.m_z_1 {
+  z-index: 1; }
+
+.m_z_2 {
+  z-index: 2; }
+
+.m_z_3 {
+  z-index: 3; }
+
+.m_z_4 {
+  z-index: 4; }
+
+.m_z_5 {
+  z-index: 5; }
+
+.m_z_10 {
+  z-index: 5; }
+
+.m_center {
+  left: 50%;
+  transform: translateX(-50%); }
+
+.m_middle {
+  top: 50%;
+  transform: translateY(-50%); }
+
+.m_circle {
+  border-radius: 50%; }
+
+/* *************** 一塊のモジュール **************** */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			header
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.site__title {
+  font-weight: 300;
+  font-size: 7.4rem;
+  /*対応していないブラウザ用*/
+  font-size: min(7.4rem, 7vw);
+  font-family: "JSO", sans-serif;
+  white-space: nowrap;
+  margin-right: 20px; }
+
+.header__up {
+  border-bottom: solid 1px #707070;
+  padding: 15px 0 10px; }
+
+.address__tel {
+  font-size: 1.8rem;
+  /*対応していないブラウザ用*/
+  font-size: min(3rem, 3vw);
+  margin-bottom: 5px; }
+
+.global-menu__ul {
+  margin-bottom: 20px; }
+.global-menu__item {
+  margin: 12px 4% 7px; }
+.global-menu__link {
+  padding: 3px 5px;
+  transition: 0.5s; }
+@media screen and (min-width: 769px) {
+  .global-menu__link::after {
+    content: "";
+    display: block;
+    width: 0%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: -1;
+    height: 1.5em;
+    background: #707070;
+    transition: 0.2s ease-out;
+    transform: translateY(-50%); }
+  .global-menu__link:hover {
+    color: #fff; }
+    .global-menu__link:hover::after {
+      right: none;
+      left: 0;
+      width: 100%; } }
+
+.header__image {
+  max-width: 834px;
+  width: 100%;
+  margin: 0 auto;
+  display: block; }
+
+/*================================================
+
+					STATE
+
+================================================*/

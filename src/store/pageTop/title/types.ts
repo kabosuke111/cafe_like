@@ -1,4 +1,4 @@
-import {AT_SectionTitle} from '../actionTypes';
+import {AT_SectionTitle} from '../../actionTypes';
 import {Action} from 'redux';
 
 //stateの型

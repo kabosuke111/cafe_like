@@ -6,10 +6,10 @@ import MenuOthers from './top_menu/menu_others'
 const TopMenu = () => {
 
   return (
-    <section id="l-index">
-      <h2 className="title-section">Menu</h2>
+    <section>
+      <h2>Menu</h2>
       <p>美味しいピザを食べながらゆっくり一時どうでしょう？</p>
-        <MenuTopics>本田</MenuTopics>
+        <MenuTopics />
         <MenuRecommend />
         <MenuOthers />
     </section>

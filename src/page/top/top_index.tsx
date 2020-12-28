@@ -8,7 +8,7 @@ import TopAccess from './top_access';
 const TopIndex = () => {
 
   return (
-    <main id="l-index">
+    <main className="l-main">
       <TopNews />
       <TopConcept />
       <TopMenu />
