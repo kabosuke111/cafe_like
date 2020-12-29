@@ -11,6 +11,10 @@
 	font-family: "JSO";
 	src: url(../fonts/JuliusSansOne-Regular.woff);
 }
+@font-face {
+	font-family: "AC";
+	src: url("../fonts/Apple Chancery.woff");
+}
 
 /*================================================
 
@@ -27,6 +31,7 @@ $bigFontSize: 3.0rem;
 $fontFamilyTypos: kan48typos-std, sans-serif;
 $fontFamilyAvenir: "Avenir", sans-serif;
 $fontFamilyJSO: "JSO", sans-serif;
+$fontFamilyAC: "AC", sans-serif;
 
 //media query
 $mediaPC: 1024px;
@@ -35,6 +40,7 @@ $mediaSmallPhone: 375px;
 
 .t_back_main_color {background: $mainColor;}
 .t_font_main_color {color: $mainFontColor;}
+.t_font_sub_color {color: $subColor;}
 .t_back_sub_color {background: $subColor;}
 
 /*================================================
@@ -79,7 +85,9 @@ img{width:100%;}
 					LAYOUT
 
 ================================================*/
-
+.l-section {
+	margin-top: 90px;
+}
 
 /*================================================
 
@@ -91,6 +99,7 @@ img{width:100%;}
 .m_font_JSO {font-family: $fontFamilyJSO;}
 .m_font_Ave {font-family: $fontFamilyAvenir;}
 .m_font_Typ {font-family: $fontFamilyTypos;}
+.m_font_AC {font-family: $fontFamilyAC;}
 
 //font-sizeの基本は次の五つをとりあえず使う。
 .m_font_little {font-size: 1.0rem;}
@@ -106,7 +115,7 @@ img{width:100%;}
 .m_bold {font-weight: bold;}
 .m_normal {font-weight: normal;}
 
-.m_t_center {text_align: center;}
+.m_t_center {text-align: center;}
 
 .m_t_indent_1 {text-indent: -1em;padding-left: 1em;}
 
@@ -134,6 +143,8 @@ img{width:100%;}
 .m_relative {position: relative;}
 .m_fixed {position: fixed;}
 .m_z_1 {z-index: 1;}.m_z_2 {z-index: 2;}.m_z_3 {z-index: 3;}.m_z_4 {z-index: 4;}.m_z_5 {z-index: 5;}.m_z_10 {z-index: 5;}
+
+.m_bc_main {background-color: $mainColor;}
 
 .m_center {left: 50%;transform: translateX(-50%);}
 .m_middle {top: 50%;transform: translateY(-50%);}
@@ -213,8 +224,57 @@ img{width:100%;}
 	@include MWMD(834px, nochange, nochange);
 }
 
+.header__caption {
+	margin-top: 50px;
+	
+	&__group {
+		padding: 45px;
+	}
+	
+	&__icon {
+		@include MWMD(null, 64px, nochange, null);
+	}
+	
+	&__text {
+		margin: 30px 45px;
+	}
+}
 
+.block__header {
+	&__icon {
+		@include MWMD(null, 85px, nochange, null);
+	}
+	
+	&__title {
+		
+		&::after {
+			content: "";
+			@include MWMD(null, 120%, 8px auto 0 -14%, inline-block);
+			height: 9px;
+			border: solid 1px #707070;
+		}
+	}
+}
 
+.block--news {
+	@include MWMD(900px, nochange, 55px auto, null);
+	
+	&__article {
+		@include MWMD(400px, nochange, 0 15px 20px 0);
+		padding: 15px;
+		height: 125px;
+		border-radius: 20px;
+		box-shadow: 3px 2px 6px rgba(0,0,0,16%);
+	}
+	
+	&__time {
+		border-bottom: solid 1px $subColor;
+	}
+	
+	&__text {
+		margin-top: 20px;
+	}
+}
 
 /*================================================
 

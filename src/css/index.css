@@ -9,6 +9,9 @@
 @font-face {
   font-family: "JSO";
   src: url(../fonts/JuliusSansOne-Regular.woff); }
+@font-face {
+  font-family: "AC";
+  src: url("../fonts/Apple Chancery.woff"); }
 /*================================================
 
 					THEME
@@ -19,6 +22,9 @@
 
 .t_font_main_color {
   color: #707070; }
+
+.t_font_sub_color {
+  color: #dbbe1d; }
 
 .t_back_sub_color {
   background: #dbbe1d; }
@@ -67,6 +73,9 @@ img {
 					LAYOUT
 
 ================================================*/
+.l-section {
+  margin-top: 90px; }
+
 /*================================================
 
 					MODULE
@@ -80,6 +89,9 @@ img {
 
 .m_font_Typ {
   font-family: kan48typos-std, sans-serif; }
+
+.m_font_AC {
+  font-family: "AC", sans-serif; }
 
 .m_font_little {
   font-size: 1.0rem; }
@@ -109,7 +121,7 @@ img {
   font-weight: normal; }
 
 .m_t_center {
-  text_align: center; }
+  text-align: center; }
 
 .m_t_indent_1 {
   text-indent: -1em;
@@ -205,6 +217,9 @@ img {
 .m_z_10 {
   z-index: 5; }
 
+.m_bc_main {
+  background-color: #eaeaea; }
+
 .m_center {
   left: 50%;
   transform: translateX(-50%); }
@@ -271,6 +286,45 @@ img {
   width: 100%;
   margin: 0 auto;
   display: block; }
+
+.header__caption {
+  margin-top: 50px; }
+  .header__caption__group {
+    padding: 45px; }
+  .header__caption__icon {
+    width: 64px;
+    margin: 0 auto; }
+  .header__caption__text {
+    margin: 30px 45px; }
+
+.block__header__icon {
+  width: 85px;
+  margin: 0 auto; }
+.block__header__title::after {
+  content: "";
+  width: 120%;
+  margin: 8px auto 0 -14%;
+  display: inline-block;
+  height: 9px;
+  border: solid 1px #707070; }
+
+.block--news {
+  max-width: 900px;
+  width: 100%;
+  margin: 55px auto; }
+  .block--news__article {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 15px 20px 0;
+    display: block;
+    padding: 15px;
+    height: 125px;
+    border-radius: 20px;
+    box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.16); }
+  .block--news__time {
+    border-bottom: solid 1px #dbbe1d; }
+  .block--news__text {
+    margin-top: 20px; }
 
 /*================================================
 
