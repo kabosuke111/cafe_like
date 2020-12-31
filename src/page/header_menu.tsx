@@ -15,7 +15,13 @@ interface Objs {
   names: string;
 }
 
-const HeaderMenu = () => {
+interface Props {
+  class_add: string;
+}
+
+const HeaderMenu = (props: Props) => {
+  
+
   const objs: Objs = {
     make_texts: [],
     key_names: [],
@@ -51,7 +57,7 @@ const HeaderMenu = () => {
   methods.make_array_single('section_');
 
   return (
-    <nav className="global-menu">
+    <nav className={`global-menu ${props.class_add}`}>
       <ul className="global-menu__ul m_d_flex_nowrap m_f_center">
         {objs.make_texts.map((key,index)=>
           <li className={`global-menu__item global-menu__item--${objs.key_names[index]} m_font_large`}>

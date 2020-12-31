@@ -9,12 +9,12 @@ const TopNews = () => {
   return (
     <section className="l-section news">
       <TitleImage  src="news" />
-      <div className="block--news m_d_flex m_f_center">
+      <div className="b--news m_d_flex m_f_center">
       {news_item.map((key)=>(
-        <a  className="block--news__article" href="#">
+        <a  className="b--news__article" href="#">
           <article>
-            <p><time className="block--news__time m_font_AC t_font_sub_color u_font_20" dateTime={key.times}>{key.times_text}</time></p>
-            <p className="block--news__text">{key.news_text}</p>
+            <p><time className="b--news__time m_font_AC t_font_sub_color u_font_20" dateTime={key.times}>{key.times_text}</time></p>
+            <p className="b--news__text">{key.news_text}</p>
           </article>
         </a>
       ))}

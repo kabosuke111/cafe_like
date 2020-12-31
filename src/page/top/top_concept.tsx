@@ -4,13 +4,16 @@ import ImageSilence from '../../images/top/concept-silence.jpg';
 import ImageHappiness from '../../images/top/concept-happiness.jpg';
 import TitleImage from './parts_image/title/title_image';
 
-
 interface TYPE_concept_list {
   "title": string,
   "image": string
 }
 
-const TopConcept = () => {
+interface Props {
+  "func": (text:string) => string;
+}
+
+const TopConcept = (props: Props) => {
 
   const conseptList: Array<TYPE_concept_list> = [
     {
@@ -26,6 +29,7 @@ const TopConcept = () => {
       "image": ImageHappiness,
     }
   ]
+  console.log(props.func("hh"));
 
   //先頭のみ小文字から大文字へ
   const upperCase = (text: string): string => {
@@ -39,18 +43,20 @@ const TopConcept = () => {
   return (
     <section className="l-section concept">
       <TitleImage  src="concept" />
-      <ul>
-        {conseptList.map((key) => (
-            <li>
-              <img className={`concept__image ${key.title}`} src={key.image} alt={key.title} />
-              <p className="concept__title">{`${upperCase(key.title)}`}</p>
-            </li>
-        ))}
-      </ul>
-      <p>目指したのは心の休まる安らぎの空間。<br />
-      なんかまた来たいな、と思わせるような癒しのカフェを目指しました。<br />
-      わいわいがやがやもいいけれど、<br />
-      一人で静かに過ごすのも大切ですよね。</p>
+      <div className="b--concept">
+        <ul className="b--concept__features m_d_flex_nowrap_stretch m_f_between">
+          {conseptList.map((key) => (
+              <li className="b--concept__features__item m_relative">
+                <img className={`b--concept__features__image ${key.title}`} src={key.image} alt={key.title} />
+                <p className="b--concept__features__title m_font_white m_l_h_1">{`${upperCase(key.title)}`}</p>
+              </li>
+          ))}
+        </ul>
+        <p className="b--concept__text">目指したのは心の休まる安らぎの空間。<br />
+        なんかまた来たいな、と思わせるような癒しのカフェを目指しました。<br />
+        わいわいがやがやもいいけれど、<br />
+        一人で静かに過ごすのも大切ですよね。</p>
+      </div>
     </section>
   );
 }
