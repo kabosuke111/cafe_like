@@ -7,12 +7,15 @@ import TitleImage from './parts_image/title/title_image';
 const TopMenu = () => {
 
   return (
-    <section className="l-section menu">
+    <section id="menu" className="l-section menu">
       <TitleImage  src="menu" />
-      <p>美味しいピザを食べながらゆっくり一時どうでしょう？</p>
-        <MenuTopics />
-        <MenuRecommend />
-        <MenuOthers />
+      <div className="b--menu">
+        <p className="b--menu__caption m_t_center">美味しいピザを食べながらゆっくり一時どうでしょう？</p>
+          <MenuTopics />
+          <MenuRecommend />
+          <MenuOthers />
+      </div>
+      
     </section>
   );
 }

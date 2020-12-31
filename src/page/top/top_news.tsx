@@ -7,7 +7,7 @@ const TopNews = () => {
   const news_item = News_item;
 
   return (
-    <section className="l-section news">
+    <section id="news" className="l-section news">
       <TitleImage  src="news" />
       <div className="b--news m_d_flex m_f_center">
       {news_item.map((key)=>(

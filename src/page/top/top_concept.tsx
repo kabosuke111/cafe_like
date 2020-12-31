@@ -3,17 +3,14 @@ import ImageCalm from '../../images/top/concept-calm.jpg';
 import ImageSilence from '../../images/top/concept-silence.jpg';
 import ImageHappiness from '../../images/top/concept-happiness.jpg';
 import TitleImage from './parts_image/title/title_image';
+import {upperCase} from './../../data/common';
 
 interface TYPE_concept_list {
   "title": string,
   "image": string
 }
 
-interface Props {
-  "func": (text:string) => string;
-}
-
-const TopConcept = (props: Props) => {
+const TopConcept = () => {
 
   const conseptList: Array<TYPE_concept_list> = [
     {
@@ -29,19 +26,9 @@ const TopConcept = (props: Props) => {
       "image": ImageHappiness,
     }
   ]
-  console.log(props.func("hh"));
-
-  //先頭のみ小文字から大文字へ
-  const upperCase = (text: string): string => {
-    const firstCharset = text.charAt(0);
-    const lowerText = text.slice(1);
-    const upText = firstCharset.toUpperCase();
-    const afterUpper = `${upText}${lowerText}`;
-    return afterUpper;
-  }
 
   return (
-    <section className="l-section concept">
+    <section id="concept" className="l-section concept">
       <TitleImage  src="concept" />
       <div className="b--concept">
         <ul className="b--concept__features m_d_flex_nowrap_stretch m_f_between">

@@ -118,6 +118,7 @@ img{width:100%;}
 .m_font_white {color: #fff;}
 
 .m_t_center {text-align: center;}
+.m_t_right {text-align: right;}
 
 .m_t_indent_1 {text-indent: -1em;padding-left: 1em;}
 
@@ -152,6 +153,9 @@ img{width:100%;}
 .m_center {left: 50%;transform: translateX(-50%);}
 .m_middle {top: 50%;transform: translateY(-50%);}
 .m_circle {border-radius: 50%;}
+
+.m_float_r {float: right;}.m_float_l{float: left;}
+.clearfix::after {display:block;clear:both;content:"";}
 
 
 /* *************** 一塊のモジュール **************** */
@@ -315,6 +319,89 @@ img{width:100%;}
 	
 	&__text {
 		margin: 20px 0 0 21vw;
+	}
+}
+
+.b--menu {
+	
+	&__caption {
+		margin-top: 40px;
+	}
+}
+
+.c--topics {
+	
+	&__item {
+		position: relative;
+		
+		&__textgroup {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			max-width: 310px;
+			
+			&__group {
+				&::after {
+					content: "";
+					display: block;
+					border-bottom: 2px dotted $mainFontColor;
+					width: 100%;
+					margin: 10px 0 15px;
+				}
+			}
+		}
+		
+		
+		
+		&__description {
+			display:block;
+			clear: both;
+		}
+		
+		&__inner {
+			max-width: 1000px;
+			max-height: 1000px;
+			width: 96vw;
+			height: 96vw;
+			border-radius: 50%;
+			background: $mainColor;
+		}
+		
+		&__image {
+			@include MWMD(400px, nochange, null);
+			overflow: hidden;
+			position: absolute;
+			top: 50%;
+			right: 5%;
+			transform: translateY(-50%);
+			transition: 0.5s;
+			
+			&:hover {
+				max-width: 800px;
+				width: 100%;
+				
+				.c--topics__item__image__self {
+					transform: scale(1.1);
+				}	
+			}
+			
+			&__self {
+				width: 200%;
+				max-width: 800px;
+				margin-left: -100%;
+				transition: 0.5s;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mediaPC) {
+	.c--topics {
+		&__item {
+			&__image{
+				right:0;
+			}
+		}
 	}
 }
 /*================================================

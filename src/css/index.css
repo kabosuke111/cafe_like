@@ -126,6 +126,9 @@ img {
 .m_t_center {
   text-align: center; }
 
+.m_t_right {
+  text-align: right; }
+
 .m_t_indent_1 {
   text-indent: -1em;
   padding-left: 1em; }
@@ -238,6 +241,17 @@ img {
 
 .m_circle {
   border-radius: 50%; }
+
+.m_float_r {
+  float: right; }
+
+.m_float_l {
+  float: left; }
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: ""; }
 
 /* *************** 一塊のモジュール **************** */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -364,6 +378,56 @@ img {
   .b--concept__text {
     margin: 20px 0 0 21vw; }
 
+.b--menu__caption {
+  margin-top: 40px; }
+
+.c--topics__item {
+  position: relative; }
+  .c--topics__item__textgroup {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 310px; }
+    .c--topics__item__textgroup__group::after {
+      content: "";
+      display: block;
+      border-bottom: 2px dotted #707070;
+      width: 100%;
+      margin: 10px 0 15px; }
+  .c--topics__item__description {
+    display: block;
+    clear: both; }
+  .c--topics__item__inner {
+    max-width: 1000px;
+    max-height: 1000px;
+    width: 96vw;
+    height: 96vw;
+    border-radius: 50%;
+    background: #eaeaea; }
+  .c--topics__item__image {
+    max-width: 400px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    transition: 0.5s; }
+    .c--topics__item__image:hover {
+      max-width: 800px;
+      width: 100%; }
+      .c--topics__item__image:hover .c--topics__item__image__self {
+        transform: scale(1.1); }
+    .c--topics__item__image__self {
+      width: 200%;
+      max-width: 800px;
+      margin-left: -100%;
+      transition: 0.5s; }
+
+@media screen and (max-width: 1024px) {
+  .c--topics__item__image {
+    right: 0; } }
 /*================================================
 
 					STATE
