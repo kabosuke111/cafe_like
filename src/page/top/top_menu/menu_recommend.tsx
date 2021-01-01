@@ -17,18 +17,27 @@ const MenuRecommend = () => {
   },[])
   
   return (
-      <article>
-        <h3>迷ったときのおすすめメニュー</h3>
+      <article className="c--recom m_of_x_hidden">
+        <h3 className="c--recom__title m_font_Typ m_font_largest t_font_sub_color m_t_center">迷ったときのおすすめメニュー</h3>
+        <div className="m_d_flex_nowrap_start">
         {menu.map((key)=>{
           return (
-            <dl>
-              <dt>{key.title}</dt>
-              <dd>{key.price}</dd>
-              <dd><img srcSet={`${URL_ORIGIN_IMAGE_THUMB}2x/${key.image}@2x.jpg 2x`} src={URL_ORIGIN_IMAGE_THUMB + key.image + ".jpg"} alt="" /></dd>
-              <dd>{key.description}</dd>
+            <dl className="c--recom__menu">
+              <dt className="c--recom__menu__image">
+                <img
+                  className="c--recom__menu__image__self"
+                  srcSet={`${URL_ORIGIN_IMAGE_THUMB}2x/${key.image}@2x.jpg 2x`}
+                  src={URL_ORIGIN_IMAGE_THUMB + key.image + ".jpg"}
+                  alt=""
+                />
+              </dt>
+              <dt className="c--recom__menu__title t_font_sub_color m_d_i_b m_va_middle">{key.title}</dt>
+              <dd className="c--recom__menu__price t_back_sub_color m_font_white m_d_i_b m_va_middle">&yen;{key.price}</dd>
+              <dd className="c--recom__menu__description">{key.description}</dd>
             </dl>
           )
         })}
+        </div>
       </article>
   );
 }
