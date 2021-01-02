@@ -29,7 +29,7 @@ const TopConcept = () => {
 
   return (
     <section id="concept" className="l-section concept">
-      <TitleImage  src="concept" />
+      <TitleImage  src="concept" tagChange="nochange" />
       <div className="b--concept">
         <ul className="b--concept__features m_d_flex_nowrap_stretch m_f_between">
           {conseptList.map((key) => (

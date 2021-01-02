@@ -76,6 +76,14 @@ img {
 .l-section {
   margin-top: 90px; }
 
+.l-section.access {
+  background: #585858;
+  padding-top: 50px; }
+  .l-section.access .block__header__title {
+    color: #fff; }
+    .l-section.access .block__header__title::after {
+      border-color: #fff; }
+
 /*================================================
 
 					MODULE
@@ -91,6 +99,7 @@ img {
   font-family: kan48typos-std, sans-serif; }
 
 .m_font_AC {
+  font-weight: 100;
   font-family: "AC", sans-serif; }
 
 .m_font_little {
@@ -452,13 +461,68 @@ img {
   .b--menu .c--recom__menu__image {
     margin-bottom: 15px; }
   .b--menu .c--recom__menu__title {
-    width: 210px; }
+    width: 210px;
+    margin-right: 10px; }
   .b--menu .c--recom__menu__price {
     padding: 2px 6px;
-    margin-left: 20px;
     vertical-align: middle; }
   .b--menu .c--recom__menu__description {
     margin-top: 10px; }
+.b--menu .c--others {
+  margin-top: 180px; }
+  .b--menu .c--others__title::before, .b--menu .c--others__title::after {
+    content: "";
+    display: block;
+    border-bottom: solid 1px #dbbe1d; }
+  .b--menu .c--others__title__self::before, .b--menu .c--others__title__self::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    vertical-align: middle;
+    display: inline-block;
+    background: #dbbe1d;
+    border-radius: 50%; }
+  .b--menu .c--others__title__self__inner {
+    display: inline-block;
+    margin: 0 30px;
+    vertical-align: middle; }
+  .b--menu .c--others__inner {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto; }
+  .b--menu .c--others__menu {
+    max-width: 375px;
+    width: 100%;
+    margin: 0 auto; }
+    .b--menu .c--others__menu:nth-of-type(even) {
+      padding-top: 130px; }
+    .b--menu .c--others__menu__genre {
+      margin: 15px 0; }
+      .b--menu .c--others__menu__genre::after {
+        content: "";
+        border-bottom: solid 1px #dbbe1d;
+        width: 100%; }
+      .b--menu .c--others__menu__genre__inner {
+        white-space: nowrap;
+        margin-right: 12px; }
+    .b--menu .c--others__menu__image__self {
+      max-width: 350px;
+      width: 100%;
+      margin: 0 auto;
+      display: block; }
+    .b--menu .c--others__menu__item {
+      margin-bottom: 60px; }
+    .b--menu .c--others__menu__title {
+      margin-right: 2em; }
+
+.b--access__address {
+  margin-top: 50px;
+  padding-bottom: 100px; }
+  .b--access__address__address {
+    margin-top: 30px; }
+
+.b--copyright {
+  padding: 15px; }
 
 @media screen and (max-width: 1024px) {
   .b--menu .c--topics__item__image {

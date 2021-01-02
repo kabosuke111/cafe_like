@@ -8,7 +8,7 @@ const TopMenu = () => {
 
   return (
     <section id="menu" className="l-section menu">
-      <TitleImage  src="menu" />
+      <TitleImage  src="menu" tagChange="nochange" />
       <div className="b--menu">
         <p className="b--menu__caption m_t_center">美味しいピザを食べながらゆっくり一時どうでしょう？</p>
           <MenuTopics />

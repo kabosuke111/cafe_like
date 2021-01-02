@@ -8,7 +8,7 @@ const TopNews = () => {
 
   return (
     <section id="news" className="l-section news">
-      <TitleImage  src="news" />
+      <TitleImage  src="news" tagChange="nochange" />
       <div className="b--news m_d_flex m_f_center">
       {news_item.map((key)=>(
         <a  className="b--news__article" href="#">

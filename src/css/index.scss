@@ -24,6 +24,7 @@
 $mainColor:  #eaeaea;
 $mainFontColor: #707070;
 $subColor: #dbbe1d;
+$footerColor: #585858;
 $mainFontSize: 1.4rem;
 $biggerFontSize: 1.8rem;
 $bigFontSize: 3.0rem;
@@ -89,6 +90,19 @@ img{width:100%;}
 	margin-top: 90px;
 }
 
+.l-section.access {
+	background: $footerColor;
+	padding-top: 50px;
+	
+	.block__header__title {
+		color: #fff;
+		
+		&::after {
+			border-color: #fff;
+		}
+	}
+}
+
 /*================================================
 
 					MODULE
@@ -99,7 +113,7 @@ img{width:100%;}
 .m_font_JSO {font-family: $fontFamilyJSO;}
 .m_font_Ave {font-family: $fontFamilyAvenir;}
 .m_font_Typ {font-family: $fontFamilyTypos;}
-.m_font_AC {font-family: $fontFamilyAC;}
+.m_font_AC {font-weight:100;font-family: $fontFamilyAC;}
 
 //font-sizeの基本は次の五つをとりあえず使う。
 .m_font_little {font-size: 1.0rem;}
@@ -368,8 +382,6 @@ img{width:100%;}
 				}
 			}
 
-
-
 			&__description {
 				@extend .clearfix::after;
 			}
@@ -425,11 +437,11 @@ img{width:100%;}
 			
 			&__title {
 				width: 210px;
+				margin-right: 10px;
 			}
 			
 			&__price {
 				padding: 2px 6px;
-				margin-left: 20px;
 				vertical-align: middle;
 			}
 			
@@ -439,7 +451,96 @@ img{width:100%;}
 			}
 		}
 	}//c--recom
+	
+	.c--others {
+		margin-top: 180px;
+		
+		&__title {
+			&::before, &::after {
+				content: "";
+				display: block;
+				border-bottom: solid 1px $subColor;
+			}
+			
+			&__self {
+				
+				&::before, &::after {
+					content: "";
+					width: 7px;
+					height: 7px;
+					vertical-align: middle;
+					display: inline-block;
+					background: $subColor;
+					border-radius: 50%;
+				}
+
+				&__inner {
+					display: inline-block;
+					margin: 0 30px;
+					vertical-align: middle;
+				}	
+			}
+		}
+		
+		&__inner {
+			@include MWMD(1000px, nochange,nochange,null);
+		}
+		
+		&__menu {
+			@include MWMD(375px,nochange,nochange,null);
+			
+			&:nth-of-type(even) {
+				padding-top: 130px;
+			}
+			
+			&__genre {
+				margin: 15px 0;
+				
+				&::after {
+					content: "";
+					border-bottom: solid 1px $subColor;
+					width: 100%;
+				}
+				
+				&__inner {
+					white-space: nowrap;
+					margin-right: 12px;
+				}
+			}
+			
+			&__image__self {
+				@include MWMD(350px);
+			}
+			
+			&__item {
+				margin-bottom: 60px;
+			}
+			
+			&__title {
+				margin-right: 2em;
+			}
+		}
+	}//c--others
 }//b--menu
+
+
+
+.b--access {
+	
+	&__address {
+		margin-top: 50px;
+		padding-bottom: 100px;
+		
+		&__address {
+			margin-top: 30px;
+		}
+	}
+}//b--access
+
+.b--copyright {
+	padding: 15px;
+	
+}//b--copyright
 
 
 
