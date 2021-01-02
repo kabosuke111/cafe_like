@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "./static/css/main.02d88f17.chunk.css",
+    "main.js": "./static/js/main.a87c17ff.chunk.js",
+    "main.js.map": "./static/js/main.a87c17ff.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.f6867962.js",
+    "runtime-main.js.map": "./static/js/runtime-main.f6867962.js.map",
+    "static/js/2.080ffb24.chunk.js": "./static/js/2.080ffb24.chunk.js",
+    "static/js/2.080ffb24.chunk.js.map": "./static/js/2.080ffb24.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.27c6bbb883fbca77f8d620a541ef36b9.js": "./precache-manifest.27c6bbb883fbca77f8d620a541ef36b9.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.02d88f17.chunk.css.map": "./static/css/main.02d88f17.chunk.css.map",
+    "static/js/2.080ffb24.chunk.js.LICENSE.txt": "./static/js/2.080ffb24.chunk.js.LICENSE.txt",
+    "static/media/index.css": "./static/media/frame-menu_title_lost.8373ad5e.svg",
+    "static/media/concept-calm.jpg": "./static/media/concept-calm.55d0f0d0.jpg",
+    "static/media/concept-happiness.jpg": "./static/media/concept-happiness.1733726f.jpg",
+    "static/media/concept-silence.jpg": "./static/media/concept-silence.93541892.jpg",
+    "static/media/menu-pasta@2x.jpg": "./static/media/menu-pasta@2x.395cd27a.jpg",
+    "static/media/thumb-menu_pasta.jpg": "./static/media/thumb-menu_pasta.157b9093.jpg",
+    "static/media/title_access.svg": "./static/media/title_access.ddc781ac.svg",
+    "static/media/title_concept.svg": "./static/media/title_concept.9c72ca62.svg",
+    "static/media/title_menu.svg": "./static/media/title_menu.0d669764.svg",
+    "static/media/title_news.svg": "./static/media/title_news.7aa90532.svg",
+    "static/media/top-header.jpg": "./static/media/top-header.60d7260a.jpg",
+    "static/media/top_image.svg": "./static/media/top_image.b5f31478.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f6867962.js",
+    "static/js/2.080ffb24.chunk.js",
+    "static/css/main.02d88f17.chunk.css",
+    "static/js/main.a87c17ff.chunk.js"
+  ]
+}
