@@ -524,11 +524,65 @@ img {
 .b--copyright {
   padding: 15px; }
 
+/* *************** メディアクエリ **************** */
 @media screen and (max-width: 1024px) {
   .b--menu .c--topics__item__image {
     right: 5%; }
     .b--menu .c--topics__item__image:hover {
       max-width: 700px; } }
+@media screen and (max-width: 768px) {
+  .b--concept__features {
+    display: block; }
+    .b--concept__features::before, .b--concept__features::after {
+      max-width: none;
+      height: 135px; }
+    .b--concept__features__item {
+      width: 100%;
+      min-width: none; }
+    .b--concept__features__title {
+      text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      font-size: 6rem;
+      transform: none;
+      transform-origin: center; }
+  .b--concept__text {
+    margin-left: 0;
+    padding: 0 15px;
+    line-height: 2; }
+
+  .b--menu .c--topics__title {
+    position: static;
+    padding: 0;
+    transform: translateY(-50%) rotate(-6deg);
+    text-align: center;
+    background: none;
+    max-width: 310px;
+    margin: 0 auto; }
+  .b--menu .c--topics__item__textgroup {
+    position: static;
+    transform: none;
+    max-width: none; }
+    .b--menu .c--topics__item__textgroup__group {
+      margin-top: 40px; }
+  .b--menu .c--topics__item__inner {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    border-radius: 0;
+    margin-top: 70px;
+    padding: 0 20px 20px; }
+  .b--menu .c--topics__item__image {
+    position: static;
+    width: 100%;
+    margin: 0 auto;
+    transform: none;
+    margin-top: 10px; }
+    .b--menu .c--topics__item__image__self {
+      width: 100%;
+      margin: 0; } }
 /*================================================
 
 					STATE

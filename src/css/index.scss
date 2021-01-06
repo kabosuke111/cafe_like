@@ -542,8 +542,7 @@ img{width:100%;}
 	
 }//b--copyright
 
-
-
+/* *************** メディアクエリ **************** */
 @media screen and (max-width: $mediaPC) {
 	.b--menu {
 		.c--topics {
@@ -560,6 +559,91 @@ img{width:100%;}
 		}//c--topics
 	}//b--menu
 }
+
+@media screen and (max-width: $mediaPhone) {
+	.b--concept {
+		&__features {
+			display: block;
+			
+			&::before, &::after {
+				max-width: none;
+				height: 135px;
+			}
+			
+			&__item {
+				width: 100%;
+				min-width: none;
+			}
+			
+			&__title {
+				text-shadow:  1px 1px 10px rgba(0,0,0,0.5);
+				@include POS(absolute,auto,null,0,0,null);
+				font-size: 6rem;
+				transform: none;
+				transform-origin: center;
+			}
+		}
+		
+		&__text {
+			margin-left: 0;
+			padding: 0 15px;
+			line-height: 2;
+		}
+	}//b--concept
+	
+	
+	.b--menu {
+
+		.c--topics {
+			
+			&__title {
+				position: static;
+				padding: 0;
+				transform: translateY(-50%) rotate(-6deg);
+				text-align: center;
+				background: none;
+				max-width: 310px;
+			    margin: 0 auto;
+				
+			}
+
+			&__item {
+				
+				&__textgroup {
+					position: static;
+					transform: none;
+					max-width: none;
+					
+					&__group {
+						margin-top: 40px;
+					}
+				}
+
+				&__inner {
+					width: 100%;
+					height: auto;
+					max-height: none;
+					border-radius: 0;
+					margin-top: 70px;
+					padding: 0 20px 20px;
+				}
+				
+				&__image {
+					position: static;
+					@include MWMD(null,nochange, nochange, null);
+					transform: none;
+					margin-top: 10px;
+					
+					&__self {
+						width: 100%;
+						margin: 0;
+					}
+				}
+			}
+		}
+	}//b--menu
+}
+
 /*================================================
 
 					STATE
