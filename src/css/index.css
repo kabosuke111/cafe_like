@@ -307,7 +307,29 @@ img {
     margin: 12px 4% 7px; }
   .global-menu__link {
     padding: 3px 5px;
-    transition: 0.5s; }
+    transition: 0.5s;
+    cursor: pointer; }
+    .global-menu__link--menu::before, .global-menu__link--menu::after {
+      content: "";
+      width: 0.6em;
+      display: inline-block;
+      height: 0.6em;
+      vertical-align: middle;
+      border: solid 1px transparent;
+      transform: translateY(-50%) rotate(45deg);
+      transition: 0.5s;
+      position: absolute;
+      top: 35%; }
+    .global-menu__link--menu::before {
+      border-bottom-color: #707070;
+      right: -24px; }
+    .global-menu__link--menu::after {
+      border-right-color: #707070;
+      right: -24px; }
+    .global-menu__link--menu:hover::before {
+      right: -30px; }
+    .global-menu__link--menu:hover::after {
+      right: -16px; }
   @media screen and (min-width: 769px) {
     .global-menu__link::after {
       content: "";
@@ -327,6 +349,9 @@ img {
         right: none;
         left: 0;
         width: 100%; } }
+
+.submenu--menu {
+  transition: 0.5s; }
 
 .header__image {
   max-width: 834px;
@@ -514,6 +539,12 @@ img {
       margin-bottom: 60px; }
     .b--menu .c--others__menu__title {
       margin-right: 2em; }
+  .b--menu .c--others .c--anim__others {
+    top: 0;
+    left: 0; }
+    .b--menu .c--others .c--anim__others__item {
+      background: #fff;
+      transition: 1s ease-out; }
 
 .b--access__address {
   margin-top: 50px;
@@ -588,6 +619,40 @@ img {
 					STATE
 
 ================================================*/
+.submenu--menu.is-active {
+  animation: shows_submenu 0.3s ease-in;
+  animation-fill-mode: forwards; }
+.submenu--menu__item {
+  margin: 5px 0; }
+  .submenu--menu__item:last-of-type .submenu--menu__link {
+    border-bottom: none; }
+.submenu--menu__link {
+  background: rgba(255, 255, 255, 0.5);
+  border-left: 8px solid #707070;
+  border-bottom: 1px solid #707070;
+  transition: 0.5s;
+  padding-right: 5px; }
+  .submenu--menu__link:hover {
+    background: white;
+    box-shadow: 0px 0px 10px 0px rgba(20, 20, 20, 0.3);
+    margin-bottom: 10px;
+    transform: scale(1.1); }
+  .submenu--menu__link.is-active {
+    animation: shows_submenu_item 0.5s;
+    animation-fill-mode: forwards; }
+
+@keyframes shows_submenu {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes shows_submenu_item {
+  from {
+    padding: 0 5px;
+    line-height: 0; }
+  to {
+    padding: 15px 5px;
+    line-height: 1; } }
 .is-menu_scroll {
   position: fixed;
   top: 0;

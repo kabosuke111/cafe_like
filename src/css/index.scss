@@ -64,7 +64,7 @@ $mediaSmallPhone: 375px;
 }
 
 @mixin POS($p,$t,$r,$b,$l,$z){
-	position: $p;
+	@if $t != null {position: $p;}
 	@if $t != null {top: $t;}
 	@if $r != null {right: $r;}
 	@if $b != null {bottom: $b;}
@@ -220,6 +220,41 @@ img{width:100%;}
 	&__link {
 		padding: 3px 5px;
 		transition: 0.5s;
+		cursor: pointer;
+		
+		&--menu {
+			
+			&::before, &::after {
+				content: "";
+				width: 0.6em;
+				display: inline-block;
+				height: 0.6em;
+				vertical-align: middle;
+				border: solid 1px transparent;
+				transform: translateY(-50%) rotate(45deg);
+				transition: 0.5s;
+				position: absolute;
+				top: 35%;
+			}
+			
+			&::before {
+				border-bottom-color: $mainFontColor;
+				right: -24px;
+			}
+			
+			&::after {
+				border-right-color: $mainFontColor;
+				right: -24px;
+			}
+			
+			&:hover::before {
+				right: -30px;
+			}
+			
+			&:hover::after {
+				right: -16px;
+			}
+		}
 	}
 	
 	@media screen and (min-width: 769px) {
@@ -243,9 +278,22 @@ img{width:100%;}
 			}
 		}
 	}
+}
 
+.submenu {
 	
-
+	&--menu {
+		transition: 0.5s;
+		
+		
+		&__item {
+			
+		}
+		
+		&__link {
+			
+		}
+	}
 }
 
 .header__image {
@@ -520,6 +568,15 @@ img{width:100%;}
 				margin-right: 2em;
 			}
 		}
+		
+		.c--anim__others {
+			@include POS(null,0,null,null,0,null);
+			
+			&__item {
+				background: #fff;
+				transition: 1s ease-out;
+			}
+		}
 	}//c--others
 }//b--menu
 
@@ -649,6 +706,70 @@ img{width:100%;}
 					STATE
 
 ================================================*/
+.submenu {
+	
+	&--menu {
+		
+		&.is-active {
+			animation: shows_submenu 0.3s ease-in;
+			animation-fill-mode: forwards;
+		}
+		
+		&__item {
+			margin: 5px 0;
+			
+			&:last-of-type {
+				
+				.submenu--menu__link {
+					border-bottom: none;
+				}
+			}
+		}
+		
+		&__link {
+			background: rgba(255,255,255,0.5);
+			border-left: 8px solid $mainFontColor;
+		    border-bottom: 1px solid $mainFontColor;
+			transition: 0.5s;
+			padding-right: 5px;
+			
+			&:hover {
+				background: rgba(255,255,255,1);
+				box-shadow: 0px 0px 10px 0px rgba(20,20,20,0.3);
+				margin-bottom: 10px;
+				transform: scale(1.1);
+			}
+			
+			&.is-active {
+				animation: shows_submenu_item 0.5s;
+				animation-fill-mode: forwards;
+			}
+		}
+	}
+}
+
+@keyframes shows_submenu {
+	from {
+		opacity: 0;
+	}
+	
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes shows_submenu_item {
+	from {
+		padding: 0 5px;
+		line-height: 0;
+	}
+	
+	to {
+		padding: 15px 5px;
+		line-height: 1;
+	}
+}
+
 .is-menu_scroll {
 	position: fixed;
 	top: 0;

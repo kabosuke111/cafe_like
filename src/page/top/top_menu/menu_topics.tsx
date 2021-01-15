@@ -4,7 +4,7 @@ import Pasta2x from './../../../images/menu/2x/menu-pasta@2x.jpg';
 const MenuTopics = () => {
 
   return (
-    <article className="c--topics m_relative">
+    <article id="topics" className="c--topics m_relative">
       <div className="c--topics__item m_relative">
         <div className="c--topics__item__inner m_relative m_center m_circle">
           <div className="c--topics__item__textgroup m_absolute m_middle m_z_1">
