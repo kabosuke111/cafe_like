@@ -276,6 +276,54 @@ img {
   clear: both;
   content: ""; }
 
+/* *************** 使い回しのできるパーツ スマホ専用 **************** */
+@media screen and (max-width: 768px) {
+  .m_sp_t_center {
+    text-align: center; }
+
+  .m_sp_font_little {
+    font-size: 1.0rem; }
+
+  .m_sp_font_small {
+    font-size: 1.2rem; }
+
+  .m_sp_font_medium {
+    font-size: 1.4rem; }
+
+  .m_sp_font_large {
+    font-size: 1.8rem; }
+
+  .m_sp_font_largest {
+    font-size: 3rem; }
+
+  .m_sp_d_block {
+    display: block; }
+
+  .m_sp_d_none {
+    display: none; }
+
+  .m_sp_f_start {
+    justify-content: flex-start; }
+
+  .m_sp_f_column {
+    flex-direction: column; }
+
+  .m_sp_w_100 {
+    width: 100%; }
+
+  .m_sp_h_100 {
+    height: 100%; }
+
+  .m_sp_static {
+    position: static; }
+
+  .m_sp_fixed {
+    position: fixed; }
+
+  .m_sp_airsrock {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); } }
 /* *************** 一塊のモジュール **************** */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			header
@@ -350,8 +398,21 @@ img {
         left: 0;
         width: 100%; } }
 
-.submenu--menu {
-  transition: 0.5s; }
+.submenu--menu__item {
+  margin: 5px 0; }
+  .submenu--menu__item:last-of-type .submenu--menu__link {
+    border-bottom: none; }
+.submenu--menu__link {
+  background: rgba(255, 255, 255, 0.5);
+  border-left: 8px solid #707070;
+  border-bottom: 1px solid #707070;
+  transition: 0.5s;
+  padding-right: 5px; }
+  .submenu--menu__link:hover {
+    background: white;
+    box-shadow: 0px 0px 10px 0px rgba(20, 20, 20, 0.3);
+    margin-bottom: 10px;
+    transform: scale(1.1); }
 
 .header__image {
   max-width: 834px;
@@ -562,6 +623,36 @@ img {
     .b--menu .c--topics__item__image:hover {
       max-width: 700px; } }
 @media screen and (max-width: 768px) {
+  .site__title {
+    margin-right: auto;
+    margin-left: 20px; }
+
+  .global-menu__ul {
+    transition: 0.3s;
+    transform: scale(1, 0) translate(-50%, -50%);
+    transform-origin: left top;
+    background: #fff; }
+
+  .submenu--menu__item:last-of-type .submenu--menu__link {
+    border-bottom: 1px solid #707070; }
+  .submenu--menu__link {
+    border-top: 1px solid #707070;
+    border-bottom: none;
+    border-left: none; }
+
+  .sp_show {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 15px 3px #ccc;
+    z-index: 1; }
+    .sp_show__button {
+      padding: 20px 0; }
+
   .b--concept__features {
     display: block; }
     .b--concept__features::before, .b--concept__features::after {
@@ -613,7 +704,30 @@ img {
     margin-top: 10px; }
     .b--menu .c--topics__item__image__self {
       width: 100%;
-      margin: 0; } }
+      margin: 0; }
+  .b--menu .c--recom__title {
+    width: 100%;
+    height: auto;
+    margin-top: 70px;
+    padding: 5px 0 13px;
+    background-size: contain;
+    background-position-y: 4px;
+    max-width: 375px; }
+  .b--menu .c--recom__menu {
+    width: calc(100% / 4);
+    margin: 0; }
+  .b--menu .c--others {
+    margin-top: 70px; }
+    .b--menu .c--others__menu {
+      padding: 20px; }
+      .b--menu .c--others__menu:nth-of-type(even) {
+        margin-top: 0;
+        padding-top: 0; }
+      .b--menu .c--others__menu__item {
+        margin-bottom: 20px; } }
+@media screen and (max-width: 700px) {
+  .b--menu .c--recom__menu {
+    width: 50%; } }
 /*================================================
 
 					STATE
@@ -622,24 +736,9 @@ img {
 .submenu--menu.is-active {
   animation: shows_submenu 0.3s ease-in;
   animation-fill-mode: forwards; }
-.submenu--menu__item {
-  margin: 5px 0; }
-  .submenu--menu__item:last-of-type .submenu--menu__link {
-    border-bottom: none; }
-.submenu--menu__link {
-  background: rgba(255, 255, 255, 0.5);
-  border-left: 8px solid #707070;
-  border-bottom: 1px solid #707070;
-  transition: 0.5s;
-  padding-right: 5px; }
-  .submenu--menu__link:hover {
-    background: white;
-    box-shadow: 0px 0px 10px 0px rgba(20, 20, 20, 0.3);
-    margin-bottom: 10px;
-    transform: scale(1.1); }
-  .submenu--menu__link.is-active {
-    animation: shows_submenu_item 0.5s;
-    animation-fill-mode: forwards; }
+.submenu--menu__link.is-active {
+  animation: shows_submenu_item 0.5s;
+  animation-fill-mode: forwards; }
 
 @keyframes shows_submenu {
   from {
@@ -670,3 +769,5 @@ img {
   100% {
     opacity: 1;
     height: 50px; } }
+.global-menu__ul.is-active {
+  transform: scale(1, 1) translate(-50%, -50%); }

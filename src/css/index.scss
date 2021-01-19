@@ -64,7 +64,7 @@ $mediaSmallPhone: 375px;
 }
 
 @mixin POS($p,$t,$r,$b,$l,$z){
-	@if $t != null {position: $p;}
+	@if $p != null {position: $p;}
 	@if $t != null {top: $t;}
 	@if $r != null {right: $r;}
 	@if $b != null {bottom: $b;}
@@ -177,6 +177,26 @@ img{width:100%;}
 .m_float_r {float: right;}.m_float_l{float: left;}
 .clearfix::after {display:block;clear:both;content:"";}
 
+/* *************** 使い回しのできるパーツ スマホ専用 **************** */
+@media screen and(max-width: $mediaPhone) {
+	.m_sp_t_center {text-align: center;}
+	.m_sp_font_little {font-size: 1.0rem;}
+	.m_sp_font_small {font-size: 1.2rem;}
+	.m_sp_font_medium {font-size: $mainFontSize;}
+	.m_sp_font_large {font-size: $biggerFontSize;}
+	.m_sp_font_largest {font-size: $bigFontSize;}
+	.m_sp_d_block {display: block;}
+	.m_sp_d_none {display: none;}
+	.m_sp_f_start {justify-content: flex-start;}
+	.m_sp_f_column {flex-direction: column;}
+	.m_sp_w_100 {width: 100%;}
+	.m_sp_h_100 {height: 100%;}
+	.m_sp_static {position: static;}
+	.m_sp_fixed {position: fixed;}
+	.m_sp_airsrock {top: 50%;left: 50%;transform: translate(-50%,-50%);}
+}
+
+
 
 /* *************** 一塊のモジュール **************** */
 
@@ -283,15 +303,31 @@ img{width:100%;}
 .submenu {
 	
 	&--menu {
-		transition: 0.5s;
-		
 		
 		&__item {
+			margin: 5px 0;
 			
+			&:last-of-type {
+				
+				.submenu--menu__link {
+					border-bottom: none;
+				}
+			}
 		}
 		
 		&__link {
+			background: rgba(255,255,255,0.5);
+			border-left: 8px solid $mainFontColor;
+		    border-bottom: 1px solid $mainFontColor;
+			transition: 0.5s;
+			padding-right: 5px;
 			
+			&:hover {
+				background: rgba(255,255,255,1);
+				box-shadow: 0px 0px 10px 0px rgba(20,20,20,0.3);
+				margin-bottom: 10px;
+				transform: scale(1.1);
+			}
 		}
 	}
 }
@@ -618,6 +654,52 @@ img{width:100%;}
 }
 
 @media screen and (max-width: $mediaPhone) {
+	.site__title {
+		margin-right: auto;
+		margin-left: 20px;
+	}
+	
+	.global-menu {
+		
+		&__ul {
+			transition: 0.3s;
+			transform: scale(1, 0) translate(-50%,-50%);
+			transform-origin: left top;
+			background: #fff;
+		}
+	}//global-menu
+	
+	.submenu {
+		&--menu {
+			&__item {
+				&:last-of-type {
+					.submenu--menu__link {
+						border-bottom: 1px solid $mainFontColor;
+					}
+				}
+			}
+			&__link {
+				border-top: 1px solid $mainFontColor;
+				border-bottom: none;
+				border-left: none;
+			}
+		}
+	}
+	
+	.sp_show {
+		@include POS(fixed,10px,10px,null,null,null);
+		background: rgba(255,255,255,0.7);
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		box-shadow: 3px 3px 15px 3px #ccc;
+		z-index:1;
+		
+		&__button {
+			padding: 20px 0;
+		}
+	}
+	
 	.b--concept {
 		&__features {
 			display: block;
@@ -698,8 +780,59 @@ img{width:100%;}
 				}
 			}
 		}
+		
+		.c--recom {
+			
+			&__title {
+				width: 100%;
+				height: auto;
+				margin-top: 70px;
+				padding: 5px 0 13px;
+				background: {
+					size: contain;
+					position-y: 4px;
+				}
+				max-width: 375px;
+				
+			}
+			
+			&__menu {
+				width: calc(100% / 4);
+				margin: 0;
+			}
+		}
+		
+		.c--others {
+			margin-top: 70px;
+			
+			&__menu {
+				padding: 20px;
+				
+				&:nth-of-type(even) {
+					margin-top: 0;
+					padding-top: 0;
+				}
+				
+				&__item {
+					margin-bottom: 20px;
+				}
+			}
+		}
+		
 	}//b--menu
 }
+
+
+@media screen and (max-width: 700px) {
+	.b--menu {
+		.c--recom {
+			&__menu {
+				width: 50%;
+			}
+		}
+	}
+}
+
 
 /*================================================
 
@@ -715,30 +848,7 @@ img{width:100%;}
 			animation-fill-mode: forwards;
 		}
 		
-		&__item {
-			margin: 5px 0;
-			
-			&:last-of-type {
-				
-				.submenu--menu__link {
-					border-bottom: none;
-				}
-			}
-		}
-		
 		&__link {
-			background: rgba(255,255,255,0.5);
-			border-left: 8px solid $mainFontColor;
-		    border-bottom: 1px solid $mainFontColor;
-			transition: 0.5s;
-			padding-right: 5px;
-			
-			&:hover {
-				background: rgba(255,255,255,1);
-				box-shadow: 0px 0px 10px 0px rgba(20,20,20,0.3);
-				margin-bottom: 10px;
-				transform: scale(1.1);
-			}
 			
 			&.is-active {
 				animation: shows_submenu_item 0.5s;
@@ -790,6 +900,10 @@ img{width:100%;}
 		opacity: 1;
 		height: 50px;
 	}
+}
+
+.global-menu__ul.is-active {
+	transform: scale(1,1) translate(-50%, -50%);
 }
 
 

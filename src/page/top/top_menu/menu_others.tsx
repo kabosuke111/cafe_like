@@ -29,7 +29,7 @@ const MenuOthers = () => {
         'height': '0px'
       });
     });
-  });
+  }, []);
   
   const blockInsert = (num: string): JSX.Element => {
     const block = [];
@@ -55,7 +55,7 @@ const MenuOthers = () => {
           return (
             <section className="c--others__menu" id={`othersMenu_${index + 1}`}>
               <header className="c--others__menu__header m_relative">
-                {blockInsert(`${menu[index][2][1]}`)}
+                {/* {blockInsert(`${menu[index][2][1]}`)} */}
                 <img
                   className="c--others__menu__image__self"
                   srcSet={`${URL_ORIGIN_IMAGE_THUMB}2x/${menu[index][1]}@2x.png 2x`}

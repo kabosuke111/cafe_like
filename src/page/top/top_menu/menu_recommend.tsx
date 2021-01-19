@@ -18,7 +18,7 @@ const MenuRecommend = () => {
   
   return (
       <article id="recommend" className="c--recom m_of_x_hidden">
-        <h3 className="c--recom__title m_font_Typ m_font_largest t_font_sub_color m_t_center">迷ったときのおすすめメニュー</h3>
+        <h3 className="c--recom__title m_font_Typ m_font_largest t_font_sub_color m_t_center m_sp_font_large m_sp_w_100">迷ったときのおすすめメニュー</h3>
         <div className="m_d_flex_nowrap_start">
         {menu.map((key)=>{
           return (

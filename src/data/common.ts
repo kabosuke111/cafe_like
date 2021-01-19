@@ -22,6 +22,15 @@ interface Objs {
     names: string;
 }
 
+interface Data {
+    mediaquery: number,
+}
+
+//さまざなデータの規定値
+export const data: Data = {
+    mediaquery: 767 //レスポンシブの目安
+}
+
 //先頭のみ小文字から大文字へ
 export const upperCase = (text: string): string => {
     const upperCaseValue: UpperCaseValue = {
