@@ -28,7 +28,7 @@ interface Data {
 
 //さまざなデータの規定値
 export const data: Data = {
-    mediaquery: 767 //レスポンシブの目安
+    mediaquery: 769 //レスポンシブの目安
 }
 
 //先頭のみ小文字から大文字へ

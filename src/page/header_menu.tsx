@@ -39,7 +39,7 @@ const HeaderMenu = (props: Props) => {
   }
 
   let subMenuStyle = {
-    'display': S_display,
+    'display': S_display
   }
 
   const sub_menu: Array<string> = ["topics","recommend","others"]
@@ -55,11 +55,17 @@ const HeaderMenu = (props: Props) => {
   }
 
   const menuShow = () => {
-    showClassAct('is-active');
+    sSizeAct(document.body.clientWidth);
+    if(screenSize < data.mediaquery){
+      showClassAct('is-active');
+    }
   }
 
   const menuHidden = () => {
-    showClassAct('');
+    sSizeAct(document.body.clientWidth);
+    if(screenSize < data.mediaquery){
+      showClassAct('');
+    }
   }
 
   const addBtnElement = () => {
@@ -80,14 +86,14 @@ const HeaderMenu = (props: Props) => {
           <li className={`global-menu__item global-menu__item--${objs.key_names[index]} m_font_large m_sp_w_100 m_sp_t_center`}>
             {key !== 'Menu' 
               ? 
-              <AnchorLink href={`#${lowerCase(key)}`} className="global-menu__link m_d_i_b m_relative" offset="80">{key}</AnchorLink>
+              <AnchorLink href={`#${lowerCase(key)}`} className="global-menu__link m_d_i_b m_relative" offset="80" onClick={()=>menuHidden()} >{key}</AnchorLink>
               :
               <div onMouseLeave={()=>styleChangeOut()} className="m_relative">
                 <AnchorLink href={`#${lowerCase(key)}`} id="submenu_active" onClick={()=>S_class === '' ? styleChangeEnter(): styleChangeOut()} onMouseOver={()=>styleChangeEnter()} className="global-menu__link m_d_i_b m_relative" offset="80"><span className="global-menu__link--menu m_z_2 m_relative">{key}</span></AnchorLink>
                 <ul id="submenu" className={`submenu--menu m_absolute m_sp_static ${S_class}`} style={subMenuStyle}>
                   {sub_menu.map((submenu_key) =>
                     <li className={`submenu--menu__item m_sp_w_100 m_sp_t_center`}>
-                      <AnchorLink className={`submenu--menu__link m_d_block ${S_class}`} href={`#${submenu_key}`} offset="80">{submenu_key}</AnchorLink>
+                      <AnchorLink className={`submenu--menu__link m_d_block ${S_class}`} href={`#${submenu_key}`} offset="80" onClick={()=>menuHidden()} >{submenu_key}</AnchorLink>
                     </li>
                   )}
                 </ul>
